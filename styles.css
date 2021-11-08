@@ -1,285 +1,293 @@
-* {
-  box-sizing: border-box; }
-/* --------------------------------------------------------*/
-header {
-  background: #f6f3ea;
-  min-height: 100vh;
-  padding: 5rem 5vw 2rem; }
-  header h1 {
-    font-size: calc(1.3rem + 1.8vw);
-    margin: 0;
-    line-height: 1.2em; }
-
-
-@supports (display: grid) {
-  header {
-    display: flex;
-    margin: auto;
-    padding-top: 1rem;
-    padding-bottom: 12rem; }
-    header .cuadricula {
-      width: 82vw;
-      display: grid;
-      margin: auto;
-      grid-template-columns: auto 1fr 1fr 1fr 0.5fr;
-      grid-template-rows: auto 1fr 1fr auto auto;
-      grid-gap: 1rem;
-      /*transform: rotate(-45deg);*/ }
-    header .menu{
-      grid-column: 3 ;
-      grid-row: 3;
-      justify-self: auto;
-      text-align: center; }
-
-
-    }
-
-
-.titulo{
-  font-size: 1rem;
-  margin-left: 3rem;
-  background: #f9423a;
-  padding-left: 2rem;
-}   
-
-.subtitulo {
-  
-  margin-left: 10rem;
-  padding-left: 5vw;
-  background: azure;
-}
-
-    .slider { 
-      margin-left: 2%;
-      margin-right: 2%;
-	    overflow: hidden;	/*Para que no se muestre parte de las imágenes contiguas*/
-	}
-	
-	.slider ul {
-	    display: flex;	/*Para que la disposición de las fotos sea en carrusel y no una sobre otra*/
-	    padding: 0; /*distancia entre cada foto*/
-	    width: 600%;	/*Hemos puesto este ancho porque hay 6 fotos, la última se corresponde con la 1ª para hacer simular el efecto de bucle infinito*/
-	    animation: cambio 20s infinite ease;
-	    animation-direction:normal;
-	}
-	
-	.slider li {
-	    width: 100%;
-	    list-style: none;
-	}	/*Para que cada imagen se ajuste y aparezca correctamente en el carrusel*/
-	
-	.slider img {
-	    width: 100%;	/*Una imagen es el 100% de cada keyframe*/
-	}
-	
-	@keyframes cambio {
-		
-        0% {
-	        margin-left: 0%;	/*Comienza la primera imagen en la posición 0*/
-	    }
-	    14% {
-	        margin-left: 0%;	/*Del 15 al 18 se mueve 100 a la izq*/
-	    }
-	    19% {	
-	        margin-left: -100%;	/*Del 19% al 34% de la duración del slider completo, el 2º keyframe está estático */
-	    }
-	    34% {
-	        margin-left: -100%;	/*Del 35 al 38 se mueven los keyframes 200 a la izq*/
-	    }
-	    39% {
-	        margin-left: -200%;
-	    }						/*Quieta*/
-	    54% {
-	        margin-left: -200%;
-	    }						/*Se mueve -300 (hacia la izq)*/
-	    59% {
-	        margin-left: -300%;
-	    }						/*Quieta*/
-	    74% {
-	        margin-left: -300%;
-	    }						/*Se mueve -400*/
-        79% {
-	        margin-left: -400%;
-	    }						/*Quieta*/
-	    94% {
-	        margin-left: -400%;
-	    }						/*Se mueve -500*/
-	    99% {
-	        margin-left: -500%;
-	    }						/*Quieta*/
-        100% {
-	        margin-left: -500%;
-	    }
-	}
-
-    
-
-body {
-  background: #fff2f2;
-  min-height: 100vh;
-  padding: 5rem 5vw 2rem;
-  
-}
-    /*header h1:nth-child(1) { /*V
-      color: #f9423a;
-      grid-column: 3 / 4;
-      grid-row: 3 / 2;
-      justify-self: end;
-      text-align: st; }*/
-    /*header h1:nth-child(2) { 
-      color: #f9423a;
-      writing-mode: vertical-lr;
-      grid-column: 3 / 4;
-      grid-row: 2;
-      justify-self: end;*/
-   /*   margin-top: -10px;
-      margin-right: -10px; }
-      header h1:nth-child(3) { /*I*/
- /*       color: #f9423a;
-        grid-column: 3 / 4;
-        grid-row: 3;
-        justify-self: end;
-        margin-top: -10px;
-        margin-right: -5px; }
-      header h1:nth-child(4) {  /*A*/
-  /*      color: #f9423a;
-        grid-column: 3 / 4;
-        grid-row: 4 ;
-        justify-self: end;
-        margin-top: -10px;
-        margin-right: -10px; }
-      header h1:nth-child(5) { /*J*/
-  /*      color: #f9423a;
-        grid-column: 3 / 4;
-        grid-row: 5;
-        justify-self: end;
-        margin-top: -10px;
-        margin-right: -5px; }
-      header h1:nth-child(6) { /*E*/
-  /*      color: #f9423a;
-        grid-column: 3 / 4;
-        grid-row: 6;
-        justify-self: end;
-        margin-top: -10px;
-        margin-right: -5px; }
-      header h1:nth-child(7) {  /*S*/
-  /*      color: #f9423a;
-        grid-column: 3 / 4;
-        grid-row: 7;
-        justify-self: end;
-        margin-top: -10px;
-        margin-right: -5px; }*/
-    header h2 {
-      color: #f9423a;
-      grid-column: 2 / 4;
-      grid-row: 2 ;
-      display: block;
-      justify-self: auto; 
-      position: fixed;
-      font-size: 28px ;}
-    header .follow-links {
-      grid-column: 1 / 6;
-      grid-row: 10;
-      font-size: 0.9rem;
-      border-bottom: 25px solid #f9423a;
-      align-self: start;
-      justify-content: end;
-      line-height: 1.3;
-      padding-bottom: 5px;
-      font-weight: 400; }
-    header .workshop-link {
-      border-top: 5px solid rgba(12, 12, 10, 0.8);
-      border-bottom: 5px solid rgba(12, 12, 10, 0.8);
-      font-weight: 700;
-      grid-row: 3;
-      grid-column: 4 / 6;
-      align-self: end; }
-    @media (max-width: 820px) {
-      header {
-        display: flex;
-        margin: auto;
-        padding-top: 5rem;
-        padding-bottom: 5rem; }
-        header .cuadricula {
-          transform: rotate(0); }
-        header h1:nth-child(2) {
-          margin-top: -5px; }
-        header .workshop-link {
-          margin-left: 1rem;
-          align-self: start; }
-        header .follow-links {
-          border-bottom: 20px solid #f9423a; } 
-      .titulo{
-        display: flex;
-        margin: auto;
-      }
-
-      .subtitulo{
-        display: flex;
-        margin: auto;
-      }
-
-      }
-      
-    @media (max-width: 420px) {
-      header .cuadricula {
-        width: 66vw;
-        grid-template-columns: auto 1fr 1fr 1fr 0.5fr;
-        grid-template-rows: auto auto  auto auto; 
-      }
-      header h1:nth-child(1) {
-        grid-column: 1 / -1; 
-      }
-      header h1:nth-child(2) {
-        grid-column: 3;
-        grid-row: 2 / 4;
-        margin-right: -5px; 
-      }
-      header .follow-links {
-        grid-column: 1 / 4;
-        grid-row: 3;
-        border-bottom: 10px solid #f9423a; 
-      }
-      header .workshop-link {
-        grid-column: 1 / -1;
-        grid-row: 5;
-        margin-left: 0; 
-      } }
-      .titulo{
-        display: flex;
-        margin: auto;
-      }
-  
-      .subtitulo{
-        display: flex;
-        margin: auto;
-      }
-    
-
-    
-    @media (min-width: 1000px) {
-      header {
-        padding-bottom: 15rem; }
-       }
-    @media (min-width: 1300px) {
-      header {
-        padding-bottom: 25rem; } }
-    @media (min-width: 1800px) {
-      header {
-        padding-bottom: 30rem; } } 
-
-
-body {
-  margin: 0; }
+/*  Basic Styling
+------------------------------------------------------- */
+* { box-sizing: border-box; }
 
 html {
-  font-family: 'futura-pt', helvetica, san-serif;
-  font-size: 100%;
-  color: rgba(12, 12, 10, 0.8);
-  font-weight: 400; }
+	font-family: Avenir, Helvetica, sans-serif;
+	background: #e4e4d5;
+	text-decoration: none;
 
-img {
-  max-width: 100%;
-  display: block; }
+}
+body { margin: 0; }
+
+header {
+	margin: 4rem;
+    grid-area: my-header;
+}
+
+/*nav {
+    grid-area: my-nav;
+    background-color: cornflowerblue;
+}*/
+
+aside {
+    grid-area: my-aside;
+}
+
+section {
+    grid-area: my-section;
+}
+
+footer {
+    grid-area: my-footer;
+}
+h1 {
+	text-transform: uppercase;	
+	font-size: 4rem;
+    margin: 0;
+    line-height: 1.2em;
+	display: grid;
+	grid-template-columns: repeat(19, 1fr);
+}
+h2 {
+    color: #e4e4d5;
+    background: #f9423a;
+    justify-self: center; 
+    font-size: 4rem ;
+    margin-right: 10%;    
+    padding-left: 10%;
+}
+h3 {
+    margin-left: 10rem;
+    padding-left: 5vw;
+    background: azure;
+}
+p {
+    display: block;
+    margin-inline-start: 10%;
+    margin-inline-end: 10%;
+}
+/*main {
+    color: white;
+    margin: 0 auto;
+    max-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 4em 2em 1fr 4em 2em;
+    
+    /* TIPO DE DISEÑO: MOBILE FIRST */
+    /* como  inicialmente se construye la web es en una columna */
+    /* Tal y como se espera en una visualización de dispositivo mobil 
+    grid-template-areas:  
+    "my-header"
+    "my-section" 
+    "my-aside" 
+    "my-footer" 
+    "my-header";
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+    main {
+        grid-template-columns: 20% 1fr 20%;
+        grid-template-rows: 4em 2em 1fr 4em;
+        grid-template-areas: 
+        "my-header my-header my-header" 
+        "my-section my-section my-aside" 
+        "my-section my-section my-aside" 
+        "my-footer my-footer my-footer";
+    }
+}
+
+@media (min-width: 1001px) {
+    main {
+        grid-template-columns: 20% 1fr 20%;
+        grid-template-rows: 4em 1fr 4em;
+        grid-template-areas: 
+        "my-header my-header my-header" 
+        "my-section my-section my-aside" 
+        "my-footer my-footer my-footer";
+    }
+}*/
+/*.titulo{
+    font-size: 1rem;
+    margin-right: 3rem;
+    background: #f9423a;
+    padding-right: 2rem;
+}   
+  
+.subtitulo {
+    margin-left: 10rem;
+    padding-left: 5vw;
+    background: azure; 
+}*/
 
 
+h1 span:nth-child(1) { /* v */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 1;
+	text-align: center;
+
+}
+h1 span:nth-child(2) { /* i */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 2;
+	text-align: center;
+
+}
+h1 span:nth-child(3) { /* A */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 3;
+	text-align: center;
+
+}
+h1 span:nth-child(4) { /* j */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 4;
+	text-align: center;
+
+}
+h1 span:nth-child(5) { /* e */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 5;
+	text-align: center;
+
+}
+h1 span:nth-child(6) { /* s */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 6;
+	text-align: center;
+
+}
+h1 span:nth-child(7) { /* Á */
+	grid-column: 5;
+	grid-row: 1;
+	text-align: end;
+
+}
+h1 span:nth-child(8) { /* ILA */
+	grid-column: 7;
+	grid-row: 1;	
+	text-align: initial;
+
+}
+h1 span:nth-child(9) { /* Valenc */
+	grid-column: 5;
+	grid-row: 2;
+	text-align: end;
+
+}
+h1 span:nth-child(10) {  /*A */
+	grid-column: 7;
+	grid-row: 2;
+	text-align: initial;
+
+}
+h1 span:nth-child(11) { /* SAL */
+	grid-column: 5;
+	grid-row: 3;
+	text-align: end;
+
+}
+h1 span:nth-child(12) { /*MANCA*/
+	grid-column: 7;
+	grid-row: 3;
+	text-align: initial;
+
+}
+h1 span:nth-child(13) {  /*BADA*/
+	grid-column: 5;
+	grid-row: 4;
+	text-align: end;
+
+}
+.C h1 span:nth-child(14) {  /*OZ*/
+	grid-column: 7;
+	grid-row: 4;
+	text-align: initial;
+
+}
+.C h1 span:nth-child(15) {  /*S*/
+	grid-column: 5;
+	grid-row: 5;
+	text-align: end;
+
+}
+h1 span:nth-child(16) {  /*VILLA*/
+	grid-column: 7;
+	grid-row: 5;
+	text-align: initial;
+
+}
+h1 span:nth-child(17) {  /*OUREN*/
+	grid-column: 5;
+	grid-row: 6;
+	text-align: end;
+
+}
+h1 span:nth-child(18) {  /*E*/
+	grid-column: 7;
+	grid-row: 6;
+	text-align: initial;
+
+}
+
+.slider { 
+	margin-left: -5rem;
+	width: 50%;	/*Ancho de la web que ocupa el slider*/
+	overflow: hidden;	/*Para que no se muestre parte de las imágenes contiguas*/
+	  }
+	  
+.slider ul {
+	display: flex;	/*Para que la disposición de las fotos sea en carrusel y no una sobre otra*/
+	padding: 0; /*distancia entre cada foto*/
+	width: 600%;	/*Hemos puesto este ancho porque hay 6 fotos, la última se corresponde con la 1ª para hacer simular el efecto de bucle infinito*/
+	animation: cambio 20s infinite ease;
+	animation-direction:normal;
+	  }
+	  
+.slider li {
+	width: 100%;
+	list-style: none;
+	  }	/*Para que cada imagen se ajuste y aparezca correctamente en el carrusel*/
+	  
+.slider img {
+	width: 100%;	/*Una imagen es el 100% de cada keyframe*/
+	  }
+	  
+	  @keyframes cambio {
+		  
+		  0% {
+			  margin-left: 0%;	/*Comienza la primera imagen en la posición 0*/
+		  }
+		  14% {
+			  margin-left: 0%;	/*Del 15 al 18 se mueve 100 a la izq*/
+		  }
+		  19% {	
+			  margin-left: -100%;	/*Del 19% al 34% de la duración del slider completo, el 2º keyframe está estático */
+		  }
+		  34% {
+			  margin-left: -100%;	/*Del 35 al 38 se mueven los keyframes 200 a la izq*/
+		  }
+		  39% {
+			  margin-left: -200%;
+		  }						/*Quieta*/
+		  54% {
+			  margin-left: -200%;
+		  }						/*Se mueve -300 (hacia la izq)*/
+		  59% {
+			  margin-left: -300%;
+		  }						/*Quieta*/
+		  74% {
+			  margin-left: -300%;
+		  }						/*Se mueve -400*/
+		  79% {
+			  margin-left: -400%;
+		  }						/*Quieta*/
+		  94% {
+			  margin-left: -400%;
+		  }						/*Se mueve -500*/
+		  99% {
+			  margin-left: -500%;
+		  }						/*Quieta*/
+		  100% {
+			  margin-left: -500%;
+		  }
+	  }
+  
